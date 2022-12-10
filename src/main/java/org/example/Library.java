@@ -2,13 +2,26 @@ package org.example;
 
 import io.javalin.Javalin;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
+
+    public static Logger logger = LoggerFactory.getLogger(Library.class);
     static List<Book> library = new ArrayList<>();
 
     public static void main(String[] args) {
+
+        logger.trace("This log was created at the trace level");
+        logger.debug("this log was created at the debug level");
+        logger.info("Application starting!");
+        logger.warn("This log was created at the warn level");
+        logger.error("This log was created at the Error level");
+
+
         Book startingBook = new Book();
         startingBook.setTitle("the Fellowship of the ring");
         startingBook.setAuthor("J. R. R. Tolkien");
